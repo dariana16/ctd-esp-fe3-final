@@ -1,5 +1,5 @@
 import React from "react";
-
+import {useContextGlobal} from '../Components/utils/global.context'
 
 const Card = ({ data }) => {
 

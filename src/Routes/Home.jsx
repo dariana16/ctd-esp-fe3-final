@@ -6,9 +6,9 @@ import {useContextGlobal} from '../Components/utils/global.context'
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const {dentistList} = useContextGlobal()
+  const {apiState} = useContextGlobal()
 
-console.log(dentistList);
+console.log(apiState);
   return (
     <main className="" >
       <h1>Home</h1>
@@ -16,7 +16,7 @@ console.log(dentistList);
             <div className='card-grid'>
 
            
-            {dentistList.map(dentist => <Link key={dentist.id} to={'/dentist/:id' + dentist.id }  > <Card data={dentist} />   </Link>)}
+            {apiState.dentistList.map(dentist => <Link key={dentist.id} to={'/dentist/:id' + dentist.id }  > <Card data={dentist} />   </Link>)}
          
         
     </div>
