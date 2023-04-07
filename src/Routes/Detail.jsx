@@ -1,25 +1,47 @@
-import React, { useEffect, useState } from 'react'
- 
+import React, { useEffect, useState, useParams } from 'react'
+import {useNavigate} from 'react-router-dom'
+import { useContextGlobal } from '../Components/utils/global.context'
 
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
+  const {id} = useParams()
+  const [dentistList] = useState([])
+  const {favDispatch, apiState,  getDentist,  } = useContextGlobal()
+   const navigate = useNavigate() 
 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+  useEffect(() => {
+   
+  getDentist(id)
+  }, [id])
 
+ 
 
+const addFav = () => {
+  favDispatch({type: 'ADD_FAV', payload: apiState.dentistDetails})
+}
+
+ 
 
   return (
     <>
       <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */
+      <div className='card'>
+        
+      <h3> {dentistList.dentistDetails.id}</h3>  
+        
+      </div> 
+ 
+   
+    
+      <br />
+      <button onClick={() => navigate(-1)}>Go back</button>
+      <button onClick={addFav}>⭐</button>
+
       
       
-      }
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>
   )
-}
+    }
 
 export default Detail

@@ -22,6 +22,7 @@ console.log(dentistList);
     </div>
         
     </main>
+     
   )
 }
 

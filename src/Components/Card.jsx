@@ -8,9 +8,12 @@ const Card = ({ data }) => {
   }
 
   return (
-    <div className='card'>
-        <h2> {data.name} </h2>
-        <h2>{data.username}</h2>
+    <div  >
+<div className='card'>   
+
+<h2> {data.name} </h2>
+<h2>{data.username}</h2></div>
+    
        
    
         
