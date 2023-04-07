@@ -12,7 +12,7 @@ const Detail = () => {
   useEffect(() => {
    
   getDentist(id)
-  }, [id])
+  }, )
 
  
 

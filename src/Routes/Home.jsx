@@ -16,7 +16,7 @@ console.log(dentistList);
             <div className='card-grid'>
 
            
-            {dentistList.map(dentist => <Link to={'/dentist/id' + dentist.id}  > <Card data={dentist} />   </Link>)}
+            {dentistList.map(dentist => <Link key={dentist.id} to={'/dentist/:id' + dentist.id }  > <Card data={dentist} />   </Link>)}
          
         
     </div>
