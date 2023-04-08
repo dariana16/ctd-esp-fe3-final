@@ -5,7 +5,7 @@ import {useContextGlobal} from '../Components/utils/global.context'
 
 
 const Home = () => {
-  const {dentistState} = useContextGlobal()
+  const {dentistState, themeState } = useContextGlobal()
 
 console.log(dentistState);
   return (
@@ -14,11 +14,9 @@ console.log(dentistState);
 
             <div className='card-grid'>
 
-           
             {dentistState.dentistList.map(dentist => <Link key={dentist.id} to={'/dentist/' + dentist.id }  > <Card data={dentist} />   </Link>)}
-         
-        
-    </div>
+
+            </div>
         
     </main>
      

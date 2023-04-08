@@ -4,7 +4,7 @@ import useContextGlobal from '../Components/utils/global.context'
 
 const Detail = () => {
   const { id } = useParams();
-  const {dentistState, dentistDispatch, getDentist} = useContextGlobal()
+  const {dentistState, getDentist, dentistDispatch} = useContextGlobal()
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Detail = () => {
     <>
       <h1>Detail Dentist id </h1>
       <div className='card'>
-      <img className="imgdoctor" src="/images/doctor.jpg" alt="" />
+      <img   src="/images/doctor.jpg" alt="" />
       <h3>{dentistState.dentistDetail.name}</h3>
         <h4>{dentistState.dentistDetail.email}</h4>
         <p>{dentistState.dentistDetail.phone}</p>

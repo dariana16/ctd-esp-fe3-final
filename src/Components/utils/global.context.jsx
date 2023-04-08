@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, useReducer} from "react";
+import { createContext, useContext, useEffect, useReducer} from "react";
 export const ContextGlobal = createContext();
 
 const theme = {

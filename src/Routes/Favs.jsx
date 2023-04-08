@@ -1,17 +1,16 @@
 import React from "react";
 import { useContextGlobal } from '../Components/utils/global.context'
+import { Link } from "react-router-dom";
+import Card from "../Components/Card";
 
-// Este componente deberá ser estilado como "dark" o "light" dependiendo del theme del Context
+
 const Favs = () => {
   const { favState } = useContextGlobal()
 
   return (
     <div>
       {favState.map(dentist => (
-        <div key={dentist.id}>
-          <h3>{dentist.name}</h3>
-          {/* Add the rest of the card elements here */}
-        </div>
+      <Link key={dentist.id} to={'/dentist/'+ dentist.id}><Card data={dentist}/></Link>
       ))}
     </div>
   )

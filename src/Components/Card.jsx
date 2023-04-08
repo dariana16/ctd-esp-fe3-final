@@ -27,7 +27,7 @@ const Card = ({ data }) => {
   return (
     <div  >
 <div className='card'>   
-
+ 
 <h2> {data.name} </h2>
 <h2>{data.username}</h2></div>
 

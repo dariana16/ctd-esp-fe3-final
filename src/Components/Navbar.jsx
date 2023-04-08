@@ -4,6 +4,7 @@ import { useContextGlobal } from './utils/global.context'
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
+  
   const {themeState, themeDispatch} = useContextGlobal()
 
   const switchTheme = () => {
@@ -11,8 +12,8 @@ const Navbar = () => {
       themeDispatch({type: 'SWITCH_DARK'})
     } else {
       themeDispatch({type: 'SWITCH_LIGHT'})
-    }
-  }
+    }}
+  
 
   const themeClass = themeState.theme ? 'dark' : 'light'
   return (
@@ -28,6 +29,7 @@ const Navbar = () => {
       <button onClick={switchTheme}>{themeState.theme ? '🌕Dark' : '🌞Light'}</button>
     </nav>
   )
-}
+  }
 
-export default Navbar
+export default Navbar;
+ 
