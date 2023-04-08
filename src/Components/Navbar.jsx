@@ -17,12 +17,12 @@ const Navbar = () => {
 
   const themeClass = themeState.theme ? 'dark' : 'light'
   return (
-    <nav className={themeClass}> 
+    <nav className={themeClass.className}> 
     
       <img src="/DH.ico" alt='DH-ico' />
-      <Link to='/home'>Home</Link>
+      <Link to='/'>Home</Link>
       <Link to='/contact'>Contact</Link>
-      <Link to='/dentist/id'>Details</Link>
+      <Link to='/dentist/:id'>Details</Link>
       <Link to='/favs'>Favs</Link>
 
 

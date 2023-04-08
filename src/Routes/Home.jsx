@@ -5,11 +5,11 @@ import {useContextGlobal} from '../Components/utils/global.context'
 
 
 const Home = () => {
-  const {dentistState, themeState } = useContextGlobal()
+  const {dentistState } = useContextGlobal()
 
 console.log(dentistState);
   return (
-    <main className="" >
+    <main className='' >
       <h1>Home</h1>
 
             <div className='card-grid'>

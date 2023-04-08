@@ -128,12 +128,12 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.light-theme {
+.light {
   background-color: white;
   color: black;
 }
 
-.dark-theme {
+.dark {
   background-color: #12121296;
   color: white;
 }

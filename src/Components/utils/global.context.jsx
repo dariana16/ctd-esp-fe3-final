@@ -75,7 +75,7 @@ const Context = ({ children }) => {
 
 useEffect(() => {
   fetch(url)
-  .then(res => res.json())
+  .then(response => response.json())
   .then(data => dentistDispatch({type: 'GET_DENTISTS', payload: data}))
 }, [])
 
@@ -83,9 +83,9 @@ const getDentist = (id) => {
 let url = 'https://jsonplaceholder.typicode.com/users/' + id;
 fetch(url)
   .then(response => response.json())
-  .then(data => dentistDispatch({ type: 'GET_DENTIST', payload: data }))
+  .then(response => dentistDispatch({ type: 'GET_DENTIST', payload: response.data }))
 }
-   
+
   return (
       <ContextGlobal.Provider value={{  dentistState, getDentist, themeState, themeDispatch, favState, favDispatch }}>
       {children}
