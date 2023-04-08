@@ -14,15 +14,14 @@ const Navbar = () => {
     }
   }
 
-
+  const themeClass = themeState.theme ? 'dark' : 'light'
   return (
-    <nav>
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
+    <nav className={themeClass}> 
+    
       <img src="/DH.ico" alt='DH-ico' />
       <Link to='/home'>Home</Link>
       <Link to='/contact'>Contact</Link>
-      <Link to='/dentist/:id'>Details</Link>
+      <Link to='/dentist/id'>Details</Link>
       <Link to='/favs'>Favs</Link>
 
 

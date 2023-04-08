@@ -1,30 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, {   useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import useContextGlobal from '../Components/utils/global.context'
 
 const Detail = () => {
   const { id } = useParams();
-  const [dentist, setDentist] = useState([useState]);
+  const {dentistState, dentistDispatch, getDentist} = useContextGlobal()
   const navigate = useNavigate();
 
   useEffect(() => {
-     
-    const fetchData = async () => {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-      const data = await response.json();
-      setDentist(data);
-    };
-    fetchData();
-  }, [id]);
+    getDentist(id)
+  }, [id])
 
   return (
     <>
       <h1>Detail Dentist id </h1>
       <div className='card'>
-        
-      <h3> {dentist.id}</h3>  
-        <h2>{dentist.name}</h2>
-        <h2>{dentist.email}</h2>
-        <h2>{dentist.website}</h2>
+      <img className="imgdoctor" src="/images/doctor.jpg" alt="" />
+      <h3>{dentistState.dentistDetail.name}</h3>
+        <h4>{dentistState.dentistDetail.email}</h4>
+        <p>{dentistState.dentistDetail.phone}</p>
+        <p>{dentistState.dentistDetail.website}</p>
       </div> 
       <br />
       <button onClick={() => navigate(-1)}>Go back</button>
